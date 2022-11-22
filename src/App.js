@@ -1,9 +1,10 @@
 import './App.css';
+import Hijo from './components/Hijo';
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <Hijo />
     </div>
   );
 }
