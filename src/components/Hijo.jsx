@@ -1,16 +1,21 @@
-import React, { useContext } from 'react';
-import { userContext } from '../App';
+import { useUserContext, useUserToggleContext } from "../UserProvider";
 
 const Hijo = () => {
 
-  const user = useContext(userContext);
+  const user = useUserContext();
+  const cambiaLogin = useUserToggleContext();
 
   return (
     <div>
 
       <h2>Componente Hijo</h2>
-      {user && <p>Hola {user.name}</p>}
-      
+      {user &&
+        <div>
+          <p>Hola {user.name}</p>
+          <p>E-mail: {user.email}</p>
+        </div>
+      }
+      <button onClick={cambiaLogin}>Cambia Login</button>
     </div>
   )
 }
